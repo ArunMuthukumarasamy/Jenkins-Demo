@@ -4,7 +4,7 @@ pipeline {
     environment {
         GITHUB_CREDENTIALS_ID = 'github-creds'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-creds'
-        DOCKER_IMAGE = 'arun m/jenkins-lab'
+        DOCKER_IMAGE = 'arun-m/jenkins-lab'
     }
 
     stages {

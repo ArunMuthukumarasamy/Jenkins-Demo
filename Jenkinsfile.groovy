@@ -4,13 +4,13 @@ pipeline {
     environment {
         GITHUB_CREDENTIALS_ID = 'github-creds'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-creds'
-        DOCKER_IMAGE = 'rohanm0702/jenkins-lab'
+        DOCKER_IMAGE = 'arun m/jenkins-lab'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: "${GITHUB_CREDENTIALS_ID}", url: 'https://github.com/Rohanm0702/Jenkins.git'
+                git branch: 'main', credentialsId: "${GITHUB_CREDENTIALS_ID}", url: 'https://github.com/ArunMuthukumarasamy/Jenkins-Demo.git'
             }
         }
         stage('Build Docker Image') {

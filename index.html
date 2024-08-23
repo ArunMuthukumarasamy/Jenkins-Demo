@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Server Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Message from Node.js Server</h1>
+    <button id="fetchMessageButton">Fetch Message</button>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('fetchMessageButton').addEventListener('click', function() {
+            fetch('http://localhost:3000')  // Adjust the URL if the server runs on a different port
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById('message').innerText = text;
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error fetching message: ' + error;
+                });
+        });
+    </script>
+</body>
+</html>
